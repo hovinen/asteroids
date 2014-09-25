@@ -21,12 +21,12 @@ public class KeyEventProcessor implements KeyEventReceiver {
 
     @Override
     public void leftPressed() {
-	ship.accelerate(-THRUSTER_STRENGTH, 0);
+	ship.accelerate(THRUSTER_STRENGTH, 0);
     }
 
     @Override
     public void rightPressed() {
-	ship.accelerate(THRUSTER_STRENGTH, 0);
+	ship.accelerate(-THRUSTER_STRENGTH, 0);
     }
 
     @Override

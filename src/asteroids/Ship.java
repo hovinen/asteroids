@@ -1,8 +1,8 @@
 package asteroids;
 
 public class Ship implements TickReceiver {
-    private double xCoordinate;
-    private double yCoordinate;
+    private double xCoordinate = 0.5;
+    private double yCoordinate = 0.5;
 
     private double xSpeed;
     private double ySpeed;

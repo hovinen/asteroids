@@ -9,6 +9,8 @@ abstract class AbstractFlyingObject implements TickReceiver {
 
     private final double size;
 
+    private DeathNotifier deathNotifier;
+
     public AbstractFlyingObject(double xCoordinate, double yCoordinate,
 	    double size) {
 	this.xCoordinate = xCoordinate;
@@ -29,6 +31,10 @@ abstract class AbstractFlyingObject implements TickReceiver {
     }
 
     protected void die() {
-	System.out.println("I'm dead");
+	this.deathNotifier.notifyOfDeath(this);
+    }
+
+    public void setDeathNotifier(DeathNotifier deathNotifier) {
+	this.deathNotifier = deathNotifier;
     }
 }

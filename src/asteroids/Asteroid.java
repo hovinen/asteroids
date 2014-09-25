@@ -14,6 +14,13 @@ public class Asteroid extends AbstractFlyingObject {
     public void tick() {
 	xCoordinate += xSpeed;
 	yCoordinate += ySpeed;
+
+	if (xCoordinate < 0 || xCoordinate > 1) {
+	    die();
+	}
+	if (yCoordinate < 0 || yCoordinate > 1) {
+	    die();
+	}
     }
 
     public Asteroid withVelocity(double x, double y) {

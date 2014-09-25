@@ -33,5 +33,12 @@ public class Universe implements TickReceiver {
 
     private void addAsteroid(Asteroid asteroid) {
 	asteroids.add(asteroid);
+	asteroid.setDeathNotifier(new DeathNotifier() {
+
+	    @Override
+	    public void notifyOfDeath(AbstractFlyingObject object) {
+		asteroids.remove(object);
+	    }
+	});
     }
 }

@@ -9,7 +9,10 @@ abstract class AbstractFlyingObject implements TickReceiver {
 
     private final double size;
 
-    public AbstractFlyingObject(double size) {
+    public AbstractFlyingObject(double xCoordinate, double yCoordinate,
+	    double size) {
+	this.xCoordinate = xCoordinate;
+	this.yCoordinate = yCoordinate;
 	this.size = size;
     }
 

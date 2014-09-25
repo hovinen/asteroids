@@ -10,6 +10,12 @@ public class Asteroid extends AbstractFlyingObject {
 	super(xCoordinate, yCoordinate, size);
     }
 
+    @Override
+    public void tick() {
+	xCoordinate += xSpeed;
+	yCoordinate += ySpeed;
+    }
+
     public Asteroid withVelocity(double x, double y) {
 	xSpeed = x;
 	ySpeed = y;

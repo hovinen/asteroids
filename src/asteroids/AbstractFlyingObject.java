@@ -25,11 +25,6 @@ abstract class AbstractFlyingObject implements TickReceiver {
         return coordinate;
     }
 
-    public void accelerate(double deltaX, double deltaY) {
-        xSpeed += deltaX;
-        ySpeed += deltaY;
-    }
-
     public double getXCoordinate() {
         return xCoordinate;
     }

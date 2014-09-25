@@ -31,7 +31,9 @@ abstract class AbstractFlyingObject implements TickReceiver {
     }
 
     protected void die() {
-	this.deathNotifier.notifyOfDeath(this);
+	if (deathNotifier != null) {
+	    this.deathNotifier.notifyOfDeath(this);
+	}
     }
 
     public void setDeathNotifier(DeathNotifier deathNotifier) {

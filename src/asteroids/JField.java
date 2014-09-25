@@ -3,6 +3,7 @@ package asteroids;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.Polygon;
 
 import javax.swing.JComponent;
@@ -43,6 +44,13 @@ public class JField extends JComponent implements TickReceiver{
 		shipShape.addPoint(converter.getX(), converter.getY());
 		g.drawPolygon(shipShape);
 		
+		g.setColor(Color.BLUE);
+		for(Asteroid asteroid : universe.getAsteriods()){
+			Point asteroidCoordinate = converter.toGraphicCoordinate(asteroid.getXCoordinate(), asteroid.getYCoordinate());
+			final int asteroidGraphicSize = (int) (asteroid.getSize() * DIMENSION);
+			g.drawOval(asteroidCoordinate.x, asteroidCoordinate.y, asteroidGraphicSize, asteroidGraphicSize);
+		}
+			
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class App {
 			frame.setLayout(new BorderLayout());
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			final Ship ship = new Ship();
-			Universe universe = new Universe();
+			final Universe universe = new Universe();
 			final KeyEventProcessor keyEventProcessor = new KeyEventProcessor(ship);
 			final JField field = new JField(ship, universe);
 			field.addKeyListener(new KeyAdapter() {
@@ -52,6 +52,7 @@ public class App {
 					SwingUtilities.invokeLater(new Runnable() {
 						@Override
 						public void run() {
+							universe.tick();
 							ship.tick();
 							field.tick();
 						}

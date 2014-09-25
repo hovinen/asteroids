@@ -15,7 +15,7 @@ public class MainThread extends Thread {
 		while(running){
 			long start=System.currentTimeMillis();
 			tickreceiver.tick();
-			long timeToSleep = MS_PER_FRAME-System.currentTimeMillis()-start;
+			long timeToSleep = MS_PER_FRAME-(System.currentTimeMillis()-start);
 			if (timeToSleep>0){
 				try {
 					Thread.sleep(timeToSleep);
@@ -27,6 +27,14 @@ public class MainThread extends Thread {
 			
 		}
 	}
+	@Override
+	public void interrupt() {
+		// TODO Auto-generated method stub
+		super.interrupt();
+	}
+	/*
+	 * 
+	 */
 	public void stopRunning(){
 		running=false;
 	}

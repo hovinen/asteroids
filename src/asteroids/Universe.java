@@ -2,22 +2,31 @@ package asteroids;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class Universe {
+public class Universe implements TickReceiver {
+    private static final int NUMBER_OF_ASTEROIDS = 5;
+
     private final List<Asteroid> asteroids = new ArrayList<>();
-
-    public Universe() {
-	asteroids
-		.add(new Asteroid(0.25, 0.25, 0.05).withVelocity(-0.01, -0.01));
-	asteroids
-		.add(new Asteroid(0.65, 0.15, 0.07).withVelocity(-0.015, 0.01));
-    }
 
     public Iterable<Asteroid> getAsteriods() {
 	return asteroids;
     }
 
-    public void addAsteroid(Asteroid asteroid) {
+    @Override
+    public void tick() {
+	Random random = new Random();
+
+	while (asteroids.size() < NUMBER_OF_ASTEROIDS) {
+	    addAsteroid(createNewAsteroid(random));
+	}
+    }
+
+    private Asteroid createNewAsteroid(Random random) {
+	return new Asteroid(0, random.nextDouble(), 0.05).withVelocity(0.01, 0);
+    }
+
+    private void addAsteroid(Asteroid asteroid) {
 	asteroids.add(asteroid);
     }
 }

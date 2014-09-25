@@ -7,6 +7,12 @@ abstract class AbstractFlyingObject implements TickReceiver {
     protected double xSpeed;
     protected double ySpeed;
 
+    private final double size;
+
+    public AbstractFlyingObject(double size) {
+	this.size = size;
+    }
+
     @Override
     public void tick() {
         xCoordinate = boundCoordinate(xCoordinate + xSpeed);
@@ -31,5 +37,9 @@ abstract class AbstractFlyingObject implements TickReceiver {
 
     public double getYCoordinate() {
         return yCoordinate;
+    }
+
+    public double getSize() {
+	return size;
     }
 }

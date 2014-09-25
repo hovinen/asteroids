@@ -17,6 +17,10 @@ public class Universe implements TickReceiver {
     public void tick() {
 	Random random = new Random();
 
+	for (Asteroid asteroid : asteroids) {
+	    asteroid.tick();
+	}
+
 	while (asteroids.size() < NUMBER_OF_ASTEROIDS) {
 	    addAsteroid(createNewAsteroid(random));
 	}

@@ -1,5 +1,8 @@
 package asteroids;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -58,6 +61,16 @@ public class App {
 			frame.getContentPane().add(field, BorderLayout.CENTER);
 			frame.setTitle("Asteroids");
 			frame.pack();
+			field.addComponentListener(new ComponentAdapter() {
+
+				@Override
+				public void componentShown(ComponentEvent e) {
+					final Component component = e.getComponent();
+					component.requestFocusInWindow();
+					component.removeComponentListener(this);
+				}
+				
+			});
 			frame.setVisible(true);
 	}
 }

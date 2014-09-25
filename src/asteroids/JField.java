@@ -19,6 +19,7 @@ public class JField extends JComponent implements TickReceiver{
 
 	public JField(Ship ship) {
 		super();
+		setFocusable(true);
 		setPreferredSize(new Dimension(DIMENSION, DIMENSION));
 		this.ship = ship;
 	}

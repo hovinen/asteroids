@@ -1,12 +1,13 @@
 package asteroids;
 
-public class Ship {
+public class Ship implements TickReceiver {
     private double xCoordinate;
     private double yCoordinate;
 
     private double xSpeed;
     private double ySpeed;
 
+    @Override
     public void tick() {
 	xCoordinate += xSpeed;
 	yCoordinate += ySpeed;

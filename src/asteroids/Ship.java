@@ -5,8 +5,6 @@ public class Ship extends AbstractFlyingObject {
 
     public Ship() {
 	super(0.5, 0.5, SHIP_SIZE);
-	xSpeed = 0.01;
-	ySpeed = 0.015;
     }
 
     public void accelerate(double deltaX, double deltaY) {

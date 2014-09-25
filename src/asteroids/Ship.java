@@ -1,6 +1,6 @@
 package asteroids;
 
-public class Ship implements TickReceiver {
+public class Ship  extends AbstractFlyingObject{
     private double xCoordinate = 0.5;
     private double yCoordinate = 0.5;
 
@@ -16,8 +16,8 @@ public class Ship implements TickReceiver {
     }
 
     public void accelerate(double deltaX, double deltaY) {
-	xSpeed += deltaX;
-	ySpeed += deltaY;
+	    xSpeed += deltaX;
+	    ySpeed += deltaY;
     }
 
     public double getXCoordinate() {

@@ -23,7 +23,8 @@ public class Universe implements TickReceiver {
     }
 
     private Asteroid createNewAsteroid(Random random) {
-	return new Asteroid(0, random.nextDouble(), 0.05).withVelocity(0.01, 0);
+	return new Asteroid(0.06, random.nextDouble(), 0.05).withVelocity(0.01,
+		0);
     }
 
     private void addAsteroid(Asteroid asteroid) {

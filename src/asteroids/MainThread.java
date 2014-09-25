@@ -27,14 +27,7 @@ public class MainThread extends Thread {
 			
 		}
 	}
-	@Override
-	public void interrupt() {
-		// TODO Auto-generated method stub
-		super.interrupt();
-	}
-	/*
-	 * 
-	 */
+	
 	public void stopRunning(){
 		running=false;
 	}

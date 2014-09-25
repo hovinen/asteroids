@@ -12,11 +12,11 @@ public class Ship {
 	yCoordinate += ySpeed;
     }
 
-    public double getxCoordinate() {
+    public double getXCoordinate() {
 	return xCoordinate;
     }
 
-    public double getyCoordinate() {
+    public double getYCoordinate() {
 	return yCoordinate;
     }
 }

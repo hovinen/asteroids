@@ -15,8 +15,9 @@ public class App {
 			frame.setLayout(new BorderLayout());
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			final Ship ship = new Ship();
+			Universe universe = new Universe();
 			final KeyEventProcessor keyEventProcessor = new KeyEventProcessor(ship);
-			final JField field = new JField(ship);
+			final JField field = new JField(ship, universe);
 			field.addKeyListener(new KeyAdapter() {
 
 				@Override

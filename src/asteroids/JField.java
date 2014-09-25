@@ -14,14 +14,16 @@ public class JField extends JComponent implements TickReceiver{
 	private static final long serialVersionUID = 1L;
 	private static final int DIMENSION = 600;
 	private Ship ship;
+	private Universe universe;
 	
 	private final CoordinateConverter converter = new CoordinateConverter(DIMENSION);
 
-	public JField(Ship ship) {
+	public JField(Ship ship, Universe universe) {
 		super();
 		setFocusable(true);
 		setPreferredSize(new Dimension(DIMENSION, DIMENSION));
 		this.ship = ship;
+		this.universe = universe;
 	}
 
 	@Override

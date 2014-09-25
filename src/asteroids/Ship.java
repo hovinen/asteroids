@@ -9,8 +9,20 @@ public class Ship implements TickReceiver {
 
     @Override
     public void tick() {
-	xCoordinate += xSpeed;
-	yCoordinate += ySpeed;
+	xCoordinate = boundCoordinate(xCoordinate + xSpeed);
+	yCoordinate = boundCoordinate(yCoordinate + ySpeed);
+    }
+
+    private double boundCoordinate(double coordinate) {
+	if (coordinate > 1) {
+	    coordinate -= Math.floor(coordinate);
+	}
+
+	if (coordinate < 0) {
+	    coordinate -= Math.floor(coordinate);
+	}
+
+	return coordinate;
     }
 
     public void accelerate(double deltaX, double deltaY) {

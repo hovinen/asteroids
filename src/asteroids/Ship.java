@@ -13,6 +13,11 @@ public class Ship implements TickReceiver {
 	yCoordinate += ySpeed;
     }
 
+    public void accelerate(double deltaX, double deltaY) {
+	xSpeed += deltaX;
+	ySpeed += deltaY;
+    }
+
     public double getXCoordinate() {
 	return xCoordinate;
     }

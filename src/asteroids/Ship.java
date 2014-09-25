@@ -6,6 +6,8 @@ public class Ship implements TickReceiver {
 
     private double xSpeed;
     private double ySpeed;
+    
+    final private double size = 0.1;
 
     @Override
     public void tick() {
@@ -25,4 +27,8 @@ public class Ship implements TickReceiver {
     public double getYCoordinate() {
 	return yCoordinate;
     }
+
+	public double getSize() {
+		return size;
+	}
 }
